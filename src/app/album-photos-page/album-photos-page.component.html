@@ -1,0 +1,9 @@
+<div style="border: 30px inset; padding: 20px 20px;">
+  <h1>Album with id: {{ albumId }}</h1>
+  <div style="display: inline-block; border: black 5px solid; padding: 10px 10px; margin: 0 5px;"
+       *ngFor="let photo of photos">
+    <h4 style="width: 100px;">Photo title is {{ photo.title }}</h4>
+    <img alt="{{ photo.id }} photo" src="{{ photo.thumbnailUrl }}">
+  </div>
+  <img src="assets/gif/loading.gif" style="width: 150px;" *ngIf="isLoading">
+</div>

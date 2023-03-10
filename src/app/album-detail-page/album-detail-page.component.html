@@ -1,0 +1,11 @@
+<div style="border: 30px inset; padding: 20px 20px;">
+<h1>Album id is {{ album.id }}. User id is {{ album.userId }}</h1>
+
+<input style="margin-bottom: 5px;" #titleText value="{{ album.title }}"><br>
+<button style="margin-bottom: 20px;" (click)="changeTitleText(titleText)">Save</button><br>
+
+<h3><a [routerLink]="['/albums', album.id, 'photos']">Photos</a></h3>
+
+<button [routerLink]="['/albums']">back</button>
+<h2 *ngIf="isTitleChanged">Title has changed!</h2>
+</div>

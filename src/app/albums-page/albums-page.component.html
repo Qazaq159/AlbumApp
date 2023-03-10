@@ -1,0 +1,11 @@
+<h1>Albums list</h1>
+
+<ul>
+  <li *ngFor="let album of albums" style="border: green 10px dotted; padding: 50px 50px; margin: 30px 30px;">
+      <h2>Album title: {{ album.title }} </h2>
+      <h4 style="text-decoration: none;">User ID: {{ album.userId }}</h4>
+      <a [routerLink]="['/albums', album.id]">more ...</a> <br><br>
+      <button (click)="deleteAlbum(album.id)">Remove</button>
+      <br><br>
+  </li>
+</ul>
