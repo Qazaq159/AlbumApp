@@ -25,7 +25,7 @@ export class AlbumPhotosPageComponent implements OnInit {
       if(_id) {
         let id = +_id;
         this.http.getAlbumPhotos(id).subscribe((photos) => {
-          delay(3000).then(any => {
+          delay(2000).then(any => {
             this.photos = photos;
             this.isLoading = false;
           });

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Album} from "../models";
+import {Album, delay} from "../models";
 import { ConfigService } from "../config.service"
 
 @Component({
@@ -9,13 +9,17 @@ import { ConfigService } from "../config.service"
 })
 export class AlbumsPageComponent implements OnInit {
   albums: Album[];
+  isLoading: boolean;
   constructor(private albumService: ConfigService) {
     this.albums = [];
+    this.isLoading = true;
   }
 
   ngOnInit(): void {
     this.albumService.getAlbums().subscribe((albums) => {
-      this.albums = albums;
+      delay(2000).then(any => {
+        this.albums = albums;
+      });
     })
   }
 
